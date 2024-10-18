@@ -5,14 +5,17 @@ fun main() {
     var hour: Int = 9
     var minute: Int = 7
 
+    val realHour = String.format("0%d", hour)
+    val realMinute = String.format("0%d", minute)
+
     println(year)
-    println(hour)
-    println(minute)
+    println(realHour)
+    println(realMinute)
 
-    hour=10
-    minute=55
+    hour = 10
+    minute = 55
 
-    print(hour)
-    print(":")
-    println(minute)
+    val andTime = String.format("%d:%d", hour, minute)
+
+    print(andTime)
 }
