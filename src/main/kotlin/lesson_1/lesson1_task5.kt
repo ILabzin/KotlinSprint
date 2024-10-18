@@ -6,10 +6,10 @@ const val secInHour: Int = 3600
 
 fun main() {
 
-    val seconds: Int = 6480
-    val hours: Int = seconds / secInHour
-    val minute: Int = (seconds % (hours * secInHour)) / minInHour
-    val sec: Int = seconds - hours * secInHour - minute * secInMin
-    val info = String.format("0%d:%2d:0%d", hours, minute, sec);
+    val allTime: Int = 6480
+    val hours: Int = allTime / secInHour
+    val minute: Int = (allTime % (hours * secInHour)) / minInHour
+    val seconds: Int = allTime - hours * secInHour - minute * secInMin
+    val info = String.format("0%d:%2d:0%d", hours, minute, seconds);
     println(info)
 }
