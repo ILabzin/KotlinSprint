@@ -11,8 +11,4 @@ fun main() {
 
     println("Бонусная кристальная руда: " + crystalBuff)
     println("Бонусная железная руда: " + ironBuff)
-
-
-
-
 }
