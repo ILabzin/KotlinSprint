@@ -6,8 +6,8 @@ const val rightNumber2 = 8
 
 fun main() {
     println("Введите 2 числа:")
-    val number1 = readLine()!!.toInt()
-    val number2 = readLine()!!.toInt()
+    val number1 = readln().toInt()
+    val number2 = readln().toInt()
     var count = 0
 
     if ((number1 == rightNumber1) || (number1 == rightNumber2)) count++
