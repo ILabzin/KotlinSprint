@@ -1,9 +1,13 @@
 package org.example.lesson_4
 
+const val goodFood = 50
+const val minNumberPeople = 55
+const val optimalNumberPeople = 70
+
 fun goodOrbad(ship: Boolean, numberPeople: Int, food: Int, weather: Boolean): Boolean {
 
-    var weCan: Boolean = (ship && (numberPeople in 55..70) && (food > 50)) ||
-            ((numberPeople == 70) && (food >= 50) && weather)
+    var weCan: Boolean = (ship && (numberPeople in minNumberPeople..optimalNumberPeople) && (food > goodFood)) ||
+            ((numberPeople == optimalNumberPeople) && (food >= goodFood) && weather)
 
     return weCan
 }
