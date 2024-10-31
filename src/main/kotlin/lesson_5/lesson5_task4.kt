@@ -2,10 +2,10 @@ package org.example.lesson_5
 
 val people = mutableMapOf("Zaphod" to "PanGalactic")
 
-fun baza(str: String): Boolean {
-    var rezult: Boolean = false
+fun searchInMap(str: String): Boolean {
+    var rezult = false
     for (person in people) {
-        if (person.key.equals(str)) rezult = true
+        if (person.key == str) rezult = true
     }
     return rezult
 }
@@ -13,12 +13,12 @@ fun baza(str: String): Boolean {
 fun main() {
     println("Введите свои данные...")
 
-    val login = readLine()
-    var intidif: Boolean = baza(login.toString())
-    if (intidif) {
+    val login = readln()
+    var identification: Boolean = searchInMap(login)
+    if (identification) {
         println("Пользователь $login найден. Введите пароль:")
-        val password = readLine().toString()
-        if (password.equals(people[login])) {
+        val password = readln()
+        if (password == people[login]) {
             println("Проходите")
         } else println("пароль неверный")
 
