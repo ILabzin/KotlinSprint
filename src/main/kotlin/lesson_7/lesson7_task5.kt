@@ -4,8 +4,10 @@ fun main() {
 
     var password: String = ""
     var symbol: String
-    val passwordLength = 6
     var number: Int
+
+    println("Введите длинну пароля")
+    val passwordLength = readln().toInt()
 
     while (password.length < passwordLength) {
         number = (48..122).random()
