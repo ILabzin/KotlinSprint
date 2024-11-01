@@ -5,12 +5,12 @@ fun main() {
     var password: String = ""
     var symbol: String
     var number: Int
-    var passwordLength:Int
+    var passwordLength: Int
 
     while (true) {
         println("Введите длинну пароля")
         passwordLength = readln().toInt()
-        if (passwordLength>=6) break
+        if (passwordLength >= 6) break
         else println("Пароль слишком короткий")
     }
 
