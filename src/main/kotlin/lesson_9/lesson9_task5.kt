@@ -1,5 +1,7 @@
 package org.example.lesson_9
 
+import java.util.*
+
 fun main() {
 
     var ingridients: String
@@ -13,7 +15,8 @@ fun main() {
         arrayDish.add(ingridients)
         if (arrayDish.size == numberOfIngridients) break
     }
-    println(arrayDish.joinToString(", ").capitalize())
+    println(arrayDish.joinToString(", ")
+        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
 
 
 }
