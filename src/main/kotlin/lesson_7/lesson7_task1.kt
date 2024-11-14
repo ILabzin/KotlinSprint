@@ -3,20 +3,17 @@ package org.example.lesson_7
 fun main() {
 
     var password: String = ""
-    var symbol: String
-    val numberDia = 48..57
-    val wordsDia = 97..122
-    var number: Int
+    val symbols: CharRange = 'a'..'z'
+    val numbers: IntRange = 0..9
 
     for (i in 1..6) {
-        number = if ((i % 2) == 0) wordsDia.random()
+        if ((i % 2) == 0) {
+            password += symbols.random()
+        }
         else {
-            numberDia.random()
+            password += numbers.random()
         }
 
-
-        symbol = number.toChar().toString()
-        password += symbol
     }
 
     println(password)
