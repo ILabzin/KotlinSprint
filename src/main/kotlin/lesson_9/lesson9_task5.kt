@@ -6,7 +6,7 @@ fun main() {
 
     var ingridients: String
     val numberOfIngridients = 5
-    val arrayDish: MutableSet<String> = mutableSetOf()
+    val arrayDish: MutableSet<String> = sortedSetOf()
 
     while (true) {
         println("Введите ингридиент")
