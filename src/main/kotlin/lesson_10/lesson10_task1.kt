@@ -2,9 +2,8 @@ package org.example.lesson_10
 
 val number = 1..6
 
-fun custCube(): Int {
-    return number.random()
-}
+fun custCube(): Int = number.random()
+
 
 fun main() {
     println("Человек бросает кубик")
