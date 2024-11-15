@@ -23,7 +23,7 @@ fun main() {
 
         println("Желаете сыграть еще раз? да/нет")
         playOrNo = readln()
-        if (playOrNo == "нет") {
+        if (playOrNo.equals("нет", ignoreCase = true)) {
             println("Игра закончена. Вы выиграли $count раз")
             break
         }
