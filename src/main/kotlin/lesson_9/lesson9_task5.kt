@@ -16,7 +16,5 @@ fun main() {
         if (arrayDish.size == numberOfIngridients) break
     }
     println(arrayDish.joinToString(", ")
-        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
-
-
+        .replaceFirstChar { it.uppercase() })
 }
