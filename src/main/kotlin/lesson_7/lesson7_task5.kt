@@ -2,10 +2,11 @@ package org.example.lesson_7
 
 fun main() {
 
-    var password: String = ""
-    var symbol: String
-    var number: Int
     var passwordLength: Int
+    val numberDia = 48..57
+    val wordsDia = 97..122
+    val bigWordsDia = 65..90
+    val allDia = numberDia + wordsDia + bigWordsDia
 
     while (true) {
         println("Введите длинну пароля")
@@ -13,14 +14,16 @@ fun main() {
         if (passwordLength >= 6) break
         else println("Пароль слишком короткий")
     }
+    val password: MutableList<String> = mutableListOf()
 
-    while (password.length < passwordLength) {
-        number = (48..122).random()
-        if ((number in 58..64) || (number in 91..96)) {
-            continue
-        }
-        symbol = number.toChar().toString()
-        password += symbol
-    }
-    println(password)
+    password.add(numberDia.random().toChar().toString())
+    password.add(wordsDia.random().toChar().toString())
+    password.add(bigWordsDia.random().toChar().toString())
+
+    for (i in 4..passwordLength) password.add(allDia.random().toChar().toString())
+
+    password.shuffle()
+
+    println(password.joinToString(""))
+
 }
