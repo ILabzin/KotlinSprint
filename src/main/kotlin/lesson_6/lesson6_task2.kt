@@ -4,11 +4,9 @@ fun main() {
 
     println("Какое количество секунд надо засечь?")
 
-    var seconds:Long = readln().toLong()
+    val seconds: Long = readln().toLong()
 
-    Thread.sleep(seconds*1000)
+    Thread.sleep(seconds * 1000)
 
-        println("Прошло $seconds секунд")
-
-
+    println("Прошло $seconds секунд")
 }
