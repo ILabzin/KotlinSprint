@@ -22,8 +22,12 @@ class Room(
         userInRoom.add(user)
     }
 
-    fun addNewStatusUser(user: User3, newStatus: String) {
-        user.statusUser = newStatus// newStatus в мейне уже берем обращением к списку статусов по индексу
+    fun changeUserStatus(nameUser: String, newStatus: String) {
+        userInRoom.forEach {
+            if (it.userName == nameUser) {
+                it.statusUser = newStatus
+            }
+        }
     }
 }
 
@@ -31,5 +35,5 @@ fun main() {
     val room1 = Room("Красивая обложка", "Любители фильмов")
     val newUser = User3("Аватар", "ШокерФейс")
     room1.addUser(newUser)
-    room1.addNewStatusUser(newUser, statusMap.get("Silence").orEmpty())
+    room1.changeUserStatus("Аватар", statusMap.get("Silence").orEmpty())
 }
