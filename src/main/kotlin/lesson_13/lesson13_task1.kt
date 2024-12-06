@@ -1,6 +1,6 @@
 package org.example.lesson_13
 
-class User(
+class User5(
     val name: String,
     val number: Long,
     val company: String?,
