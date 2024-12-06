@@ -18,8 +18,6 @@ class Day2(
 
 fun main() {
     val day1 = Day2(12, 11, true)
-    val day2 = Day2(16, 11, true)
 
     day1.printDay()
-    day2.printDay()
 }
