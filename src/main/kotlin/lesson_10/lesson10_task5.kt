@@ -1,20 +1,26 @@
 package org.example.lesson_10
 
-const val name: String = "Борис"
-const val password: String = "1234"
-val symbols = ('0'..'9') + ('A'..'Z') + ('a'..'z')
+const val NAME: String = "Борис"
+const val PASSWORD: String = "1234"
 val basket: List<String> = mutableListOf("Хлеб", "Вода", "Соль")
 
-fun autorizated(): String? {
-    var token = ""
+fun autorizate(): String? {
     println("Введите имя пользователя")
     val userName = readln()
     println("Введите пароль")
     val userPassword = readln()
-    if (userName == name || userPassword == password) {
-        for (i in 1..32) token += symbols.random()
-        return token
-    } else return null
+    return genereateToken(userName, userPassword)
+}
+
+fun genereateToken(userName: String, userPassword: String): String? {
+    val symbols = ('0'..'9') + ('A'..'Z') + ('a'..'z')
+    var token: String = ""
+    return if (userName == NAME || userPassword == PASSWORD) {
+        for (i in 1..32) {
+            token += symbols.random()
+        }
+        token
+    } else null
 }
 
 fun checkBasket(token: String): String {
@@ -22,7 +28,7 @@ fun checkBasket(token: String): String {
 }
 
 fun main() {
-    val rezult = autorizated()
+    val rezult = autorizate()
     if (rezult == null) println("Логин или пароль неверные")
     else println(checkBasket(rezult))
 }
