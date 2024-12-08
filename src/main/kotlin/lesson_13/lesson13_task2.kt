@@ -3,7 +3,7 @@ package org.example.lesson_13
 class User6(
     val name: String,
     val number: Long,
-    val company: String?,
+    val company: String? = null,
 ) {
 
     fun printUser() {
@@ -13,6 +13,6 @@ class User6(
 }
 
 fun main() {
-    val user = User6("Vova", 899988877766, null)
+    val user = User6("Vova", 899988877766)
     user.printUser()
 }
