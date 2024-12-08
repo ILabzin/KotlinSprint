@@ -6,8 +6,8 @@ class Day3(
     dayTemperatureCelsius: Int,
     nightTemperatureCelsius: Int,
 ) {
-    var dayTemperatureKelvin = dayTemperatureCelsius + DIFFERENT
-    var nightTemperatureKelvin = nightTemperatureCelsius + DIFFERENT
+    var dayTemperatureKelvin = dayTemperatureCelsius + DIFFERENT1
+    var nightTemperatureKelvin = nightTemperatureCelsius + DIFFERENT1
     fun printDay() {
         println(
             """

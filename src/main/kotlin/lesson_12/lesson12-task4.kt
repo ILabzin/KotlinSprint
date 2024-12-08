@@ -1,13 +1,13 @@
 package org.example.lesson_12
 
-const val DIFFERENT = 273.15
+const val DIFFERENT1 = 273.15
 
 class Day4(
     dayTemperatureCelsius: Int,
     nightTemperatureCelsius: Int,
 ) {
-    var dayTemperatureKelvin = dayTemperatureCelsius + DIFFERENT
-    var nightTemperatureKelvin = nightTemperatureCelsius + DIFFERENT
+    var dayTemperatureKelvin = dayTemperatureCelsius + DIFFERENT1
+    var nightTemperatureKelvin = nightTemperatureCelsius + DIFFERENT1
 
     init {
         println(
