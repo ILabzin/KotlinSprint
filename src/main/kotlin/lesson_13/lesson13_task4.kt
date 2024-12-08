@@ -2,7 +2,7 @@ package org.example.lesson_13
 
 class TelephoneBook {
 
-    val userSet = mutableSetOf(
+    private val userSet = mutableSetOf(
         User8("Vova", 547674858, "Poppi"),
         User8("Viva", 547674859, "Poppi"),
         User8("Vila", 547674857, "null"),
@@ -11,30 +11,29 @@ class TelephoneBook {
     )
 
     fun printBook() {
-        userSet.forEach() {
+        userSet.forEach {
             it.printUser()
         }
     }
 
-    fun addUser() {
-        println("Введите имя контакта:")
-        val name = readln()
-        println("введите номер телефона:")
-        val number = readln().toLongOrNull();
+    fun addUser(name: String, number: Long?, company: String?) {
         if (number == null) {
             println("Номер нужен обязательно!")
             return
         }
-        println("Введите название компании")
-        val company: String? = readlnOrNull() // не понимаю как заставить возвращать null, а записывать company=""
-        userSet.add(User8(name, number, company))
+        val companyInSet = if (company?.isEmpty() == true) null else company
+        userSet.add(User8(name, number, companyInSet))
+    }
+
+    fun getUserSet(): Set<User8> {  //решил через геттер реализовать
+        return userSet
     }
 }
 
 class User8(
     val name: String,
     val number: Long,
-    val company: String?,
+    val company: String? = null,
 ) {
 
     fun printUser() {
@@ -45,7 +44,12 @@ class User8(
 
 fun main() {
     val newBook = TelephoneBook()
-    newBook.addUser()
+    println("Напишите Имя:")
+    val name = readln()
+    println("Напишите номер:")
+    val number = readln().toLongOrNull()
+    println("Напишите компанию")
+    val company = readln()
+    newBook.addUser(name, number, company)
     newBook.printBook()
-
 }
