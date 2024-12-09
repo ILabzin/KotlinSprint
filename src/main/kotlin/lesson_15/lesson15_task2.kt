@@ -8,8 +8,10 @@ class PrecipitationAmount() : WeatherStationStats()
 
 class WeatherServer() {
     fun sendMail(weatherStationStats: WeatherStationStats) {
-        if (weatherStationStats is Temperature) println("Говорим температуру")
-        if (weatherStationStats is PrecipitationAmount) println("Говорим осадки")
+        when (weatherStationStats) {
+            is Temperature -> println("Говорим температуру")
+            is PrecipitationAmount -> println("Говорим осадки")
+        }
     }
 }
 
