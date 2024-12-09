@@ -11,7 +11,7 @@ interface SearchComponent {
 abstract class Product(
     val name: String,
     val count: Int = 0,
-) : SearchComponent
+)
 
 class Instrument(
     name: String,
