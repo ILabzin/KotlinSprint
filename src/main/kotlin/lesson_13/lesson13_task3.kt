@@ -21,9 +21,8 @@ fun main() {
         User7("Poila", 547674855),
     )
 
-
     val userWithCompany =
-        userSet.mapNotNull { if ((it.company.isNullOrEmpty()) || (it.company == "null")) null else it }
+        userSet.mapNotNull { if (it.company.isNullOrEmpty()) null else it }
 
     userWithCompany.forEach() {
         it.printUser()
