@@ -11,22 +11,16 @@ class Day5(
 ) {
     var dayTemperatureKelvin = dayTemperatureCelsius + DIFFERENT2
     var nightTemperatureKelvin = nightTemperatureCelsius + DIFFERENT2
-//    init {
-//        println(
-//            """
-//            Температура днем в Кельвинах: $dayTemperatureKelvin
-//            Температура ночью в Кельвинах: $nightTemperatureKelvin
-//        """.trimIndent()
-//        )
-//    }
 }
 
 fun main() {
+    val dayInMonth = 30
+    val randomTemperature = 1..20
     val setDay = mutableSetOf<Day5>()
-    for (i in 1..30) {
+    for (i in 1..dayInMonth) {
         val random = Random()
         val randomBoolean = random.nextBoolean()
-        setDay.add(Day5((1..20).random(), (1..15).random(), randomBoolean))
+        setDay.add(Day5(randomTemperature.random(), randomTemperature.random(), randomBoolean))
     }
     val countPresipitation = setDay.filter { it.precipitation }.size
     val mediumDay = setDay.map{it.nightTemperatureKelvin}.average()
