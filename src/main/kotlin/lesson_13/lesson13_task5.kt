@@ -16,15 +16,6 @@ class TelephoneBook1 {
         }
     }
 
-//    fun addUser(name: String, number: Long?, company: String?) {
-//        if (number == null) {
-//            println("Номер нужен обязательно!")
-//            return
-//        }
-//        val companyInSet = if (company?.isEmpty() == true) null else company
-//        userSet.add(User12(name, number, companyInSet))
-//    }
-
     fun getUserSet(): Set<User12> {  //решил через геттер реализовать
         return userSet
     }
@@ -43,9 +34,7 @@ class User12(
 }
 
 fun main() {
-//    val newBook = TelephoneBook1()
-//    println("Напишите Имя:")
-//    val name = readln()
+
     println("Напишите номер:")
     try {
         val number = readln().toLong()
@@ -53,9 +42,4 @@ fun main() {
     } catch (e: NumberFormatException) {
         println("Ошибка NumberFormatException  ${e.message}")
     }
-
-//    println("Напишите компанию")
-//    val company = readln()
-//    newBook.addUser(name, number, company)
-//    newBook.printBook()
 }
