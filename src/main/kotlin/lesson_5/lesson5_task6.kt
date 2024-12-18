@@ -10,11 +10,12 @@ fun main() {
 
     val imt = weight / height.pow(2.0)
     val formattedNumber = String.format("%.2f", imt)
-    val result: String= when (imt) {
-        in 1.0..<18.0 ->  "недостаточная масса тела"
-        in 18.0..<25.0 ->  "нормальная масса тела"
-        in 25.0..<30.0 ->  "избыточная масса тела"
-        else ->  "ожирение"
-    }
+    var result: String = ""
+
+    if (imt < 18.0) result = "недостаточная масса тела"
+    else if (imt < 25.0) result = "нормальная масса тела"
+    else if (imt < 30.0) result = "избыточная масса тела"
+    else result = "ожирение"
+
     println("Ваш ИМТ составляет ${formattedNumber}. Это $result")
 }
