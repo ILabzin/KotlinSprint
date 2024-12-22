@@ -1,32 +1,32 @@
 package org.example.lesson_11
 
-class Forum(var count: Int = 1) {
-    val setUser = mutableSetOf<ForumMember>()
-    val forum = mutableSetOf<ForumMessage>()
+class Forum {
+    var count: Int = 1
+    val users = mutableSetOf<ForumMember>()
+    val masseges = mutableSetOf<ForumMessage>()
 
-    fun createNewUser(name: String): ForumMember {
+    fun createNewUser(name: String){
         val newUser = ForumMember(count, name)
         count++
-        setUser.add(newUser)
-        return newUser
+        users.add(newUser)
     }
 
     fun createNewMessage(userId: Int) {
         var text: String
-        setUser.forEach {
+        users.forEach {
             if (it.userId == userId) {
                 text = readln()
-                forum.add(ForumMessage(userId, text))
+                masseges.add(ForumMessage(userId, text))
                 return
             }
         }
     }
 
     fun printThread() {
-        forum.forEach {
+        masseges.forEach {
             var id = it.authorId
             var name: String = ""
-            setUser.forEach {
+            users.forEach {
                 if (it.userId == id) name = it.userName
             }
             println("${name} : ${it.message}")
