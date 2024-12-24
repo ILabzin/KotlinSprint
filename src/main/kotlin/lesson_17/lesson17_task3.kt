@@ -6,7 +6,7 @@ class Folder(
     val name: String = _name
         get() {
             return if (secret) {
-                "Доступ запрещен"
+                "Cкрытая папка"
             } else field
         }
     val secret = _secret
