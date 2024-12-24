@@ -1,18 +1,19 @@
 package org.example.lesson_17
 
-import java.io.File
-
 class Folder(
-    _name: String,
-    _secret: Boolean
+    _name: String, _secret: Boolean
 ) {
-    val name = _name
-    val secret = _secret
-    var countFiles: Int? = 0
+    val name: String = _name
         get() {
             return if (secret) {
-                println("Доступ запрещен")
-                null
+                "Доступ запрещен"
+            } else field
+        }
+    val secret = _secret
+    var countFiles: Int = 0
+        get() {
+            return if (secret) {
+                0
             } else field
         }
 }
@@ -20,5 +21,6 @@ class Folder(
 fun main() {
     val folder = Folder("нуха", true)
     folder.countFiles = 15
-    val count = folder.countFiles
+    println(folder.name)
+    println(folder.countFiles)
 }
