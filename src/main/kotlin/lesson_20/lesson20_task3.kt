@@ -1,8 +1,6 @@
 package org.example.lesson_20
 
-class Player(val key: Boolean) {
-
-}
+class Player(val key: Boolean)
 
 fun main() {
     val inspectKey: (Player) -> String = { it: Player ->
