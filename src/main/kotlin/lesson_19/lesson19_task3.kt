@@ -1,16 +1,16 @@
 package org.example.lesson_19
 
-class CosmoShip () {
+class CosmoShip() {
     fun rise() {
         TODO("Написать логику")
     }
 
     fun land() {
-        TODO("Написать логику")
+//        TODO Написать логику
     }
 
     fun shoot() {
-        TODO("Написать логику")
+
     }
 }
 
