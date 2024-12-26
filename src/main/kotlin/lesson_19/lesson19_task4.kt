@@ -6,8 +6,9 @@ enum class Cartridges(val damage: Int) {
     RED(20);
 }
 
-class Tank() {
+class Tank(
     var cartridges: Cartridges? = null
+) {
 
     fun charge(value: String) {
         when (value) {
@@ -19,7 +20,7 @@ class Tank() {
 
     fun shoot() {
         if (cartridges == null) println("Не заряжено")
-        else println("Нанесли урона ${cartridges!!.damage}")
+        else println("Нанесли урона ${cartridges?.damage}")
     }
 }
 
