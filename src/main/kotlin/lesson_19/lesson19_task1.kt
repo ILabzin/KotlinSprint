@@ -8,6 +8,5 @@ enum class Fish(val text: String) {
 }
 
 fun main() {
-
-    Fish.values().forEach { println(it.text) }
+    Fish.entries.forEach { println(it.text) }
 }
