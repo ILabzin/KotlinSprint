@@ -1,6 +1,6 @@
 package org.example.lesson_20
 
-class Player(
+class Player18(
     val name: String,
     var hp: Int = 100,
     val maxHp: Int = 100,
@@ -11,9 +11,9 @@ class Player(
 }
 
 fun main() {
-    val recoverHp: (Player) -> Unit = { it: Player -> it.hp = it.maxHp }
+    val recoverHp: (Player18) -> Unit = { it: Player18 -> it.hp = it.maxHp }
 
-    val player = Player("МегаУбиватор666", 60)
+    val player = Player18("МегаУбиватор666", 60)
     println(player)
     recoverHp(player)
     println(player)
