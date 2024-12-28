@@ -1,14 +1,8 @@
 package org.example.lesson_21
 
-fun Map<String, Int>.maxCategory(): String {
-    var max = 0
-    var maxCategory: String = ""
-    this.forEach { entry -> if (entry.value > 0) max = entry.value }
-    for (value in this) {
-        if (value.value == max) maxCategory = value.key
-    }
+fun Map<String, Int>.maxCategory(): String? {
 
-    return maxCategory
+    return this.maxByOrNull { it.value }?.key
 }
 
 fun main() {
