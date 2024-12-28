@@ -4,7 +4,7 @@ class Order(
     private val id: Int,
     private var status: String = "Заказ принят"
 ) {
-    fun replaceStatus(newStatus: Int) {
+    private fun replaceStatus(newStatus: Int) {
 
         when (newStatus) {
             1 -> status = "Заказ собран"
@@ -12,6 +12,10 @@ class Order(
             3 -> status = "Заказ доставлен"
             else -> return
         }
+    }
+
+    fun setStatus(newStatus: Int) {
+        replaceStatus(newStatus)
     }
 
     override fun toString(): String {
@@ -35,6 +39,6 @@ fun main() {
 
     val newStatus: Int = readln().toInt()
 
-    order.replaceStatus(newStatus)
+    order.setStatus(newStatus)
     println(order)
 }
